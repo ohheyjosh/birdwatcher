@@ -14,5 +14,33 @@
   },
   "bugs": {
     "url": "https://github.com/ohheyjosh/birdwatcher/issues"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "no-unused-vars": "warn",
+      "no-console": "off",
+      "func-names": "off",
+      "no-process-exit": "off",
+      "no-restricted-syntax": "off",
+      "object-shorthand": "off",
+      "class-methods-use-this": "off"
+    }
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2"
   }
 }
