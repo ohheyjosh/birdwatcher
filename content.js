@@ -4,6 +4,7 @@
  */
 const isUsername = /^@\w+$/;
 const usernames = [];
+const tags = {};
 
 // disable check for defining "document" since this runs in browser
 // eslint-disable-next-line no-undef
@@ -11,5 +12,15 @@ for (const span of document.querySelectorAll("span")) {
   // if span content is a username, add to spans array
   if (isUsername.test(span.innerHTML)) {
     usernames.push(span.innerHTML);
+  }
+}
+
+/*
+ * compare list of usernames on screen
+ * to user-set tags, then add tags next to usernames
+ */
+for (const username of usernames) {
+  if (Object.keys(tags).find((tag) => tag === username)) {
+    // TODO: find every instance of username, then insert tag
   }
 }
