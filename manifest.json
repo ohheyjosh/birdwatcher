@@ -1,0 +1,17 @@
+{
+"manifest_version": 2,
+    "name": "birdwatcher",
+    "description": "Tag Twitter users to remember why you (dis)like them",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.twitter.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
