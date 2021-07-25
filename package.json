@@ -24,6 +24,9 @@
     "plugins": [
       "prettier"
     ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
     "rules": {
       "prettier/prettier": "error",
       "no-unused-vars": "warn",
@@ -33,9 +36,13 @@
       "no-restricted-syntax": "off",
       "object-shorthand": "off",
       "class-methods-use-this": "off"
+    },
+    "settings": {
+      "usePrettierrc": true
     }
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
