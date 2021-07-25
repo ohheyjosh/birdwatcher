@@ -4,7 +4,7 @@
  */
 const isUsername = /^@\w+$/;
 const usernames = [];
-const tags = {};
+const tags = {}; // TODO: make a storage thingy for this
 
 // disable check for defining "document" since this runs in browser
 // eslint-disable-next-line no-undef
