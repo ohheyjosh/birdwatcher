@@ -21,6 +21,12 @@ for (const span of document.querySelectorAll("span")) {
  */
 for (const username of usernames) {
   if (Object.keys(tags).find((tag) => tag === username)) {
-    // TODO: find every instance of username, then insert tag
+    const usernameRegex = new RegExp(username, "g");
+    // disable check for defining "document" since this runs in browser
+    // eslint-disable-next-line no-undef
+    document.body.innerHTML = document.body.innerHTML.replace(
+      usernameRegex,
+      `${username} <b>${tags[username]}</b>`
+    );
   }
 }
