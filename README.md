@@ -1,2 +1,3 @@
 # birdwatcher
-Tag Twitter users to remember why you (dis)like them
+
+Chrome extension to tag Twitter users so you can remember why you (dis)like them

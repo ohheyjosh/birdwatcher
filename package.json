@@ -1,0 +1,18 @@
+{
+  "name": "birdwatcher",
+  "version": "1.0.0",
+  "description": "Chrome extension to tag Twitter users so you can remember why you (dis)like them",
+  "author": "Josh Barnett <oh@heyjo.sh>",
+  "license": "MIT",
+  "main": "content.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohheyjosh/birdwatcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ohheyjosh/birdwatcher/issues"
+  }
+}
