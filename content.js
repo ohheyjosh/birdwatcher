@@ -3,7 +3,7 @@
  * to find spans that match username regex
  */
 const isUsername = /^@\w+$/;
-let usernames = [];
+let usernames = new Set();
 const tags = {}; // TODO: make a storage thingy for this
 
 // disable check for defining "document" since this runs in browser
@@ -11,14 +11,14 @@ const tags = {}; // TODO: make a storage thingy for this
 for (const span of document.querySelectorAll("main span")) {
   // if span content is a username, add to spans array
   if (isUsername.test(span.innerHTML)) {
-    usernames.push(span.innerHTML);
+    usernames.add(span.innerHTML);
   }
 }
 
 /*
  * strip duplicates from usernames array
  */
-usernames = [...new Set(usernames)];
+usernames = [...usernames];
 
 /*
  * compare list of usernames on screen
