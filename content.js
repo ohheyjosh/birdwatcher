@@ -3,7 +3,7 @@
  * to find spans that match username regex
  */
 const isUsername = /^@\w+$/;
-let usernames = new Set();
+const usernames = new Set();
 const tags = {}; // TODO: make a storage thingy for this
 
 // disable check for defining "document" since this runs in browser
