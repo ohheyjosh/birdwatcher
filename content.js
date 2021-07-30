@@ -16,11 +16,6 @@ for (const span of document.querySelectorAll("main span")) {
 }
 
 /*
- * strip duplicates from usernames array
- */
-usernames = [...usernames];
-
-/*
  * compare list of usernames on screen
  * to user-set tags, then add tags next to usernames
  */
