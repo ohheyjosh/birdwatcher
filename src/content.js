@@ -1,7 +1,8 @@
 /*
- * check all rendered DOM elements
- * to find spans that match username regex
+ * disable undefined checks since a document object will
+ * always be present in testing or in the browser
  */
+/* eslint-disable no-undef */
 const isUsername = /^@\w+$/;
 const usernames = new Set();
 const tags = {}; // TODO: make a storage thingy for this
@@ -11,8 +12,6 @@ const tags = {}; // TODO: make a storage thingy for this
  * and add to usernames set
  */
 const findUsernames = () => {
-  // disable check for defining "document" since this runs in browser
-  // eslint-disable-next-line no-undef
   for (const span of document.querySelectorAll("main span")) {
     // if span content is a username, add to spans array
     if (isUsername.test(span.innerHTML)) {
@@ -28,8 +27,6 @@ const findUsernames = () => {
 const applyTags = () => {
   for (const username of usernames) {
     if (Object.keys(tags).find((tag) => tag === username)) {
-      // disable check for defining "document" since this runs in browser
-      // eslint-disable-next-line no-undef
       for (const span of document.querySelectorAll("main span")) {
         if (span.innerHTML === username) {
           span.innerHTML += ` <span style="position: relative; top: 2px"  title="${tags[username]}">
@@ -47,16 +44,13 @@ const applyTags = () => {
  * run defined functions on each instance
  * of document state refresh
  */
-// disable checks for defining "document" since this runs in browser
-// eslint-disable-next-line no-undef
 document.onreadystatechange = () => {
-  // eslint-disable-next-line no-undef
   if (document.readyState === "interactive") {
-    findUsernames();
+    findUsernames(document);
     if (usernames.length) {
-      applyTags();
+      applyTags(document);
     }
   }
 };
 
-export default { findUsernames, applyTags };
+export { usernames, tags, findUsernames, applyTags };
