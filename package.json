@@ -9,7 +9,7 @@
   "license": "MIT",
   "main": "src/content.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,11 @@
   "bugs": {
     "url": "https://github.com/ohheyjosh/birdwatcher/issues"
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "eslintConfig": {
     "root": true,
     "extends": [
@@ -25,6 +30,7 @@
       "prettier"
     ],
     "plugins": [
+      "eslint-jest",
       "prettier"
     ],
     "parserOptions": {
@@ -44,14 +50,32 @@
       "usePrettierrc": true
     }
   },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "roots": [
+      "./src"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.+js",
+      "**/?(*.)+(spec|test).js"
+    ],
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.0.6",
     "eslint": "^7.31.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-prettier": "^3.4.0",
     "jest": "^27.0.6",
+    "jsdom": "^16.6.0",
     "prettier": "^2.3.2"
   }
 }
