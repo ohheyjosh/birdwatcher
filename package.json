@@ -2,7 +2,10 @@
   "name": "birdwatcher",
   "version": "1.0.0",
   "description": "Chrome extension to tag Twitter users so you can remember why you (dis)like them",
-  "author": "Josh Barnett <oh@heyjo.sh>",
+  "author": "Josh Barnett (https://github.com/ohheyjosh)",
+  "contributors": [
+    "Emily Harber (https://github.com/thecodepixi)"
+  ],
   "license": "MIT",
   "main": "content.js",
   "scripts": {
@@ -48,6 +51,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.0.6",
     "prettier": "^2.3.2"
   }
 }
