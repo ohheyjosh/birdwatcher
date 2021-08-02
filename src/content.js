@@ -50,6 +50,7 @@ const addTagsToUsernames = () => {
 };
 
 function handleSubtreeModifications(){
+  // TODO: Remove console log
   console.log('handling Subtree Modification #', runCount++);
   // briefly remove the DOM Subtree Modification listener, since we are about to modify the DOM subtree.
   // this avoids infinite loops.
