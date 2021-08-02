@@ -13,5 +13,8 @@
             ],
             "run_at": "document_end"
         }
+    ],
+    "permissions": [
+        "http://twitter.com/", "https://twitter.com/", "tabs", "activeTab", "storage"
     ]
 }

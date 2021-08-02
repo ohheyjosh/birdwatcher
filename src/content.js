@@ -6,6 +6,8 @@
 const isUsername = /^@\w+$/;
 const usernames = new Set();
 const tags = {}; // TODO: make a storage thingy for this
+const tweetsSelector = '[role="region"]'; // todo: find a better selector for areas where tweets show up
+let runCount = 0;
 
 /*
  * find usernames in main element of page
@@ -40,17 +42,40 @@ const applyTags = () => {
   }
 };
 
-/*
- * run defined functions on each instance
- * of document state refresh
- */
-document.onreadystatechange = () => {
-  if (document.readyState === "interactive") {
+const addTagsToUsernames = () => {
     findUsernames(document);
-    if (usernames.length) {
+    if (usernames.size) {
       applyTags(document);
     }
-  }
 };
 
-export { usernames, tags, findUsernames, applyTags };
+function handleSubtreeModifications(){
+  console.log('handling Subtree Modification #', runCount++);
+  // briefly remove the DOM Subtree Modification listener, since we are about to modify the DOM subtree.
+  // this avoids infinite loops.
+  if (document.querySelector(tweetsSelector)){
+    document.querySelector(tweetsSelector).removeEventListener('DOMSubtreeModified', handleSubtreeModifications);
+  }
+  // On next tick, modify the DOM
+  setTimeout(function(){
+    addTagsToUsernames();
+    if (document.querySelector(tweetsSelector)){
+      // add a listener for DOMSubtreeModified events to update tags again
+      document.querySelector(tweetsSelector).addEventListener('DOMSubtreeModified', handleSubtreeModifications);
+    }
+  }, 10);
+}
+
+
+const init = () => {
+  // call the initial DOM update to add tags
+  handleSubtreeModifications();
+}
+
+// Set an interval on page load to check if the timeline exists
+const timelineCheckInterval = setInterval(() => {
+  if (document.querySelector(tweetsSelector)){
+    init()
+    clearInterval(timelineCheckInterval);
+  }
+}, 200);
