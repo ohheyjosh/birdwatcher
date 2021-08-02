@@ -26,7 +26,7 @@ const findUsernames = () => {
  */
 const applyTags = () => {
   for (const username of usernames) {
-    if (Object.keys(tags).find((tag) => tag === username)) {
+    if (tags[username]) {
       for (const span of document.querySelectorAll("main span")) {
         if (span.innerHTML === username) {
           span.innerHTML += ` <span style="position: relative; top: 2px"  title="${tags[username]}">
