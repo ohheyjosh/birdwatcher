@@ -4,6 +4,7 @@
   "description": "Chrome extension to tag Twitter users so you can remember why you (dis)like them",
   "author": "Josh Barnett (https://github.com/ohheyjosh)",
   "contributors": [
+    "Bashu Naimi-Roy (https://github.com/bashunaimiroy)",
     "Emily Harber (https://github.com/thecodepixi)"
   ],
   "license": "MIT",
