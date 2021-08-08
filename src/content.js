@@ -1,3 +1,4 @@
+import tags from './constants/tags.json'; // TODO: make a storage thingy for this
 /*
  * disable undefined checks since a document object will
  * always be present in testing or in the browser
