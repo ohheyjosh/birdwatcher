@@ -1,6 +1,9 @@
 # Installed dependencies
 /node_modules
 
+# Build output
+/dist
+
 # Cache files
 .npm
 .eslintcache
