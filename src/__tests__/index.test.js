@@ -1,5 +1,5 @@
 import { expect, test } from "@jest/globals";
-import { usernames, findUsernames, applyTags } from "../content";
+import { usernames, findUsernames, applyTags } from "../index";
 
 beforeEach(() => {
   // set up document body
