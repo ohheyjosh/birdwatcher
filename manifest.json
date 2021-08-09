@@ -9,7 +9,7 @@
                 "*://*.twitter.com/*"
             ],
             "js": [
-                "dist/content.js"
+                "src/index.js"
             ],
             "run_at": "document_end"
         }
